@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #D4AF37;
+  --color-gold-light: #F4CF57;
+  --color-gold-dark: #B48F17;
+
+  --color-black: #000000;
+  --color-black-rich: #050505;
+  --color-black-charcoal: #1A1A1A;
+
+  --font-heading: 'Inter', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-black text-white font-body antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-heading font-bold text-gold;
+  }
+}
+
+@layer components {
+
+  /* Using standard CSS with theme variables where @apply might struggle with custom theme values in v4 early adoption */
+  .btn-gold {
+    @apply px-6 py-3 font-bold uppercase tracking-wide transition-colors duration-300 rounded-sm;
+    background-color: var(--color-gold);
+    color: var(--color-black);
+  }
+
+  .btn-gold:hover {
+    background-color: var(--color-gold-light);
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 font-bold uppercase tracking-wide transition-colors duration-300 rounded-sm;
+    border-color: var(--color-gold);
+    color: var(--color-gold);
+    background-color: transparent;
+  }
+
+  .btn-outline:hover {
+    background-color: rgba(212, 175, 55, 0.1);
+  }
+
+  .card {
+    @apply p-6 border transition-colors duration-300;
+    background-color: var(--color-black-charcoal);
+    border-color: rgba(212, 175, 55, 0.2);
+  }
+
+  .card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+  }
+}
