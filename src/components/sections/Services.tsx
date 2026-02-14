@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Card } from '../ui/Card';
 import { Shield, Coins, Car, Users, Lock, Eye } from 'lucide-react';
 import { motion } from 'framer-motion';
